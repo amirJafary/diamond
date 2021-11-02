@@ -1,19 +1,15 @@
-import React, { Component } from 'react'
+import axios from "axios";
 
-export default class GetProductInfo extends Component {
+const getProductInfo = (callback) => {
+    // let url="http://172.17.17.101:8088/api/en/Nas/Product/GetProductInfo?&id="+selectedId +"&title=is+not+valid+now"
+    let url="http://172.17.17.101:8088/api/en/Nas/Product/GetProductInfo?&id=7766&title=is+not+valid+now"
+    axios
+      .get(
+        url
+      )
+      .then(
+        response => callback(response.data.messageItems[0].data)
+      );
+};
 
-    constructor(props) {
-        super(props);
-        this.state={
-            
-        }
-    }
-    
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
-}
+export {getProductInfo}

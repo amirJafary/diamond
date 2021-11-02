@@ -1,0 +1,202 @@
+$ccc-color:#ccc !important;
+$white-color:#fff !important;
+$eee-color:#eee !important;
+$red-color:#c70909 !important;
+$black-color:#000 !important;
+$box-shadow:0 3px 6px $ccc-color ;
+$border:1px solid #bbb !important;
+$border-black:1px solid rgb(0, 0, 0) !important;
+
+.main-ProductDetail{
+    width: 68%;
+}
+
+.w-100{
+    width: 100%;
+    
+}
+
+.sideBar-ProductDetail{
+    width: 30%;
+}
+
+.bd-ProductDetail{
+    border: $border;
+    border-radius: 5px;
+}
+
+.bg-blackBtnClass{
+    background-color: $white-color;
+    color: $black-color;
+    border-radius: 5px;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+}
+
+.activeBTN{
+    background-color: $black-color;
+    color: $white-color;
+}
+
+.bdBLACK-ProductDetail{
+    border: $border-black;
+    border-radius: 5px;
+}
+
+.BTN-ProductDetail{
+    border: none;
+    background-color: $ccc-color;
+    border-radius: 3px;
+    text-align: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    font-weight: bold;
+    margin: 10px 20px;
+    margin: 0;
+}
+
+.bold-ProductDetail{
+    font-weight: bold;
+}
+
+.parentInput-textFiled-ProductDetail{
+    align-items: center;
+    border: $border;
+    padding: 10px 5px;
+    border-radius: 3px;
+    margin: 0 !important;
+    display: inline-flex;
+}
+
+.AIC{
+    align-items: center;
+}
+
+.img-sideBar-ProductDetail{
+    width: 90%;
+    height: 70%vh;
+
+}
+
+.TAS{
+    text-align: start;
+}
+
+.input-textFiled-ProductDetail{
+    width: 70px;
+}
+
+.fs20-ProductDetail{
+    font-size: 20px !important;
+} 
+
+.fs12-ProductDetail{
+    font-size: 12px !important;
+}
+
+.p-0-ProductDetail{
+    padding: 0 !important;
+}
+
+.m-0-ProductDetail{
+    margin: 0 !important;
+}
+
+.TAC-ProductDetail{
+    text-align: center !important;
+}
+
+.bg-eee-ProductDetail{
+    background-color: $eee-color;
+    width:100%;
+    border: $border;
+    border-right: none;
+}
+
+.bdr-ProductDetail{
+    border-right: $border;
+}
+
+.BTN2-ProductDetail{
+    outline: none !important;
+    background-color: $white-color;
+    border: $border-black;
+    padding: 10px 15px !important;
+    color: black;
+    border-radius: 5px !important;
+    overflow: hidden !important;
+    margin-right: 7px !important;
+    box-shadow: $box-shadow;
+    margin-top: 30px !important;
+    text-transform: capitalize !important;
+    cursor: pointer !important;
+    font-weight: 700 !important;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list {
+    width: 550px !important;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+
+.fs15-ProductDetail{
+    font-size: 13.5px;
+}
+
+.m-20-ProductDetail{
+    margin-right:235px
+}
+
+.MuiPaper-root{
+    padding: 20px !important;
+}
+
+.menu-ProductDetail{
+    margin:10px 20px 0 0 !important;
+}
+
+.BTN3-ProductDetail{
+    outline: none;
+    background-color: $red-color;
+    border: 1px solid rgb(126, 1, 1);
+    padding: 10px 15px !important;
+    color: $white-color;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 7px;
+    box-shadow: $box-shadow;
+    font-size: 13px !important;
+    margin-top: 30px;
+    float: right;
+    margin-bottom: 20px !important;
+    &:hover{
+        background-color: rgb(245, 29, 29);
+    }
+}
+
+.border-dimension-ProductDetail{
+    border: $border;
+    border-top: none;
+    border-right: none;
+}
+
+.turnaround-ProductDetail{
+    background-color: $eee-color;
+    border-radius: 5px;
+    margin-right: 40px;
+    max-width: fit-content;
+    padding: 7px 15px;
+    text-align: center;
+}
+
+.fwBOLD{
+    font-weight: bold;
+}
+
+.fwNORMAL{
+    font-weight: normal !important;
+
+}

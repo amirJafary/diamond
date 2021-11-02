@@ -94,7 +94,7 @@ export default class Products extends Component {
             </div>
             <div className="card-body">
               <p className="card-text FSize12 cardTITLE">
-                Available Circulations:{" "}
+                Available Circulations:
               </p>
               <div className="txtCEN d-flex">
                 {product.printCirculations[0] && (
