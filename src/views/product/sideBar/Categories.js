@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Checkbox from "../../../Components/Checkbox";
 import { GetCategoriesListInSideBar } from "../../../Services/GetCategoriesListInSideBar";
-import { GetProductsList } from "../../../Services/GetProductsList";
 import '../../../Assets/Scss/general.scss'
 
 export default class Categories extends Component {
@@ -9,21 +8,11 @@ export default class Categories extends Component {
     super(props);
     this.state = {
         categoriesList: [],
-        productsList:[],
         showMore: false,
         isChecked: false,
         categoriesSelected: [],
         categoriesSelectedID: [],
     };
-  }
-
-  
-  componentDidMount = () => {
-    GetProductsList(this.GetProductsListCallBack);
-  };
-
-  GetProductsListCallBack=(response)=>{
-    this.setState({ productsList: response });
   }
 
   componentDidMount = () => {

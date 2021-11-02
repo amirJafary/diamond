@@ -1,8 +1,8 @@
 $ccc-color:#ccc !important;
 $white-color:#fff !important;
 $red-color:#c70909 !important;
-$box-shadow:0 3px 6px $ccc-color !important;
-$border:1px solid #bbb;
+$box-shadow:0 3px 6px $ccc-color ;
+$border:1px solid #bbb !important;
 
 .App{
     padding: 50px 40px;
@@ -46,7 +46,7 @@ $border:1px solid #bbb;
     width: 100% !important;
     border-radius: 5px !important;
     padding: 5px 10px !important;
-    box-shadow: $box-shadow !important;
+    box-shadow: $box-shadow ;
 }
 
 .SearchIcon{
@@ -70,13 +70,13 @@ $border:1px solid #bbb;
 }
 
 .MuiSlider-colorSecondary{
-    color:$red-color !important;
+    color:$red-color ;
 }
 
 .BTN{
     outline: none;
-    background-color: $white-color !important;
-    border: 1px solid $red-color !important;
+    background-color: $white-color ;
+    border: 1px solid $red-color ;
     padding: 2px 15px !important;
     color: rgb(218, 49, 19) !important;
     border-radius: 5px !important;
@@ -90,8 +90,6 @@ $border:1px solid #bbb;
         color: rgb(131, 84, 84) !important;
     }
 }
-
-
 
 .SortBy{
     border: $border;
@@ -107,9 +105,14 @@ $border:1px solid #bbb;
     padding: 3px 7px !important;
 }
 
+.css-10w330c-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
+    background-color: $red-color;
+    color :$white-color ;
+}
+
 .active{
-    background-color: $red-color !important;
-    color :$white-color !important;
+    background-color: $red-color ;
+    color :$white-color ;
 }
 
 .m-0{
@@ -209,7 +212,6 @@ $border:1px solid #bbb;
     display: block;
     width: 100%;
     border-radius: 5px;
-    box-shadow:$box-shadow;
 }
 
 .btn-close{

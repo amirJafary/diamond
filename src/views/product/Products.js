@@ -6,7 +6,6 @@ import '../../Assets/Scss/general.scss'
 
 class Products extends Component {
   constructor(props) {
-    console.info(props)
     super(props);
     this.state = {
       categoriesSelected: [],
