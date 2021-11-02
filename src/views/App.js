@@ -4,20 +4,17 @@ import ProductDetail from "./productDetail/ProductDetail";
 import Products from "./product/Products";
 
 export default class App extends Component {
-
   constructor(props) {
     super(props);
-    this.state={
-        
-    }
+    this.state = {};
   }
-   
+
   render() {
     return (
       <Router>
         <Switch>
-          <Route path="/product/:id" component={ProductDetail} />
           <Route path="/product" component={Products} />
+          <Route path="/product/:id" component={ProductDetail} />
         </Switch>
       </Router>
     );

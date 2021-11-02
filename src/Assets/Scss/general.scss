@@ -1,0 +1,231 @@
+$ccc-color:#ccc !important;
+$white-color:#fff !important;
+$red-color:#c70909 !important;
+$box-shadow:0 3px 6px $ccc-color !important;
+$border:1px solid #bbb;
+
+.App{
+    padding: 50px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.SideBar{
+    width: 20%;
+    
+}
+
+.Main{
+    width: 78%;
+    
+}
+
+.card{
+    border-radius: 10px !important;
+    margin-bottom: 15px !important;
+    box-shadow: $box-shadow;
+}
+
+.card-header{
+    background-color: $white-color ;
+    border-bottom: none !important;
+    overflow: hidden !important;
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+    font-weight: bold;
+}
+
+.CategoryItems{
+    align-items: center;
+}
+
+.inputSearch{
+    outline: none !important;
+    background-color: $ccc-color ;
+    border: none !important;
+    width: 100% !important;
+    border-radius: 5px !important;
+    padding: 5px 10px !important;
+    box-shadow: $box-shadow !important;
+}
+
+.SearchIcon{
+    height: 34px !important;
+    position: relative !important;
+    cursor: pointer !important;
+    right: -190px !important;
+    top: -30px !important;
+    background-color: $ccc-color ;
+    border-bottom-right-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    overflow: hidden !important;
+}
+
+.inputSearch::placeholder{
+    font-size: 12px !important;
+}
+
+.AIC{
+    align-items: center !important;
+}
+
+.MuiSlider-colorSecondary{
+    color:$red-color !important;
+}
+
+.BTN{
+    outline: none;
+    background-color: $white-color !important;
+    border: 1px solid $red-color !important;
+    padding: 2px 15px !important;
+    color: rgb(218, 49, 19) !important;
+    border-radius: 5px !important;
+    overflow: hidden !important;
+    margin-right: 7px !important;
+    box-shadow: $box-shadow ;
+    font-size: 13px !important;
+
+    &:hover{
+        background-color: rgb(252, 220, 215) !important;
+        color: rgb(131, 84, 84) !important;
+    }
+}
+
+
+
+.SortBy{
+    border: $border;
+    padding: 10px 15px !important;
+    width: 100%;
+    background-color: $white-color;
+    border-radius: 10px;
+    box-shadow: $box-shadow;
+}
+
+.btn-sortBy{
+    font-size: 13px !important;
+    padding: 3px 7px !important;
+}
+
+.active{
+    background-color: $red-color !important;
+    color :$white-color !important;
+}
+
+.m-0{
+    margin: -10px 0 !important;
+}
+
+.products{
+    min-height:100vh !important;
+}
+
+.MuiPagination-ul{
+    text-align: center !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+}
+
+.Pagination{
+    width: 100%;
+    text-align: center !important;
+}
+
+.POS-REL{
+    position: relative;
+}
+
+.POS-ABS{
+    position: absolute;
+    bottom: -15px;
+    background-color: slategrey;
+    width: 100%;
+    padding: 5px 10px;
+    color: $white-color;
+}
+
+.ImgProducts{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.cardParent{
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.cardParent{
+    width: 100%;
+}
+
+.mx-10{
+    margin: 0 5px;
+}
+
+.col-4{
+    width: 32% !important;
+}
+
+.BDR{
+    border-left: $border;
+}
+
+.close{
+    border:none;
+    width: 20px !important;
+    outline: hidden;
+    background-color: rgb(75, 73, 73);
+    width: 10px !important;
+    height: 0px !important;
+}
+
+.p10{
+    padding: 0 10px;
+}
+
+.txtCEN{
+    text-align: center;
+    justify-content: center;
+}
+
+.FSize12{
+    font-size: 12px;
+}
+
+.OV-HI{
+    overflow: hidden;
+}
+
+.checkbox{
+    height: 30px !important;
+}
+
+.btn-showMore{
+    border: none;
+    color: $red-color;
+    background-color: $white-color;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow:$box-shadow;
+}
+
+.btn-close{
+    width: 0px !important;
+    height: 10px !important;
+}
+
+.close:transform{
+    scale: .5;
+}
+
+.spanFilter{
+    border-radius: 5px;
+    overflow: hidden;
+    color:$white-color;
+    background-color: rgb(58, 57, 57) !important;
+    box-shadow: $box-shadow;
+}
+

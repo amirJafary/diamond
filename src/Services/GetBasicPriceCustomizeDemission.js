@@ -8,6 +8,8 @@ export default class GetBasicPriceCustomizeDemission extends Component {
             
         }
     }
+
+    
     
     render() {
         return (
