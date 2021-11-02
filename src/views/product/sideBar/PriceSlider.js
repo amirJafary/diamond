@@ -20,7 +20,7 @@ export default class Price extends Component {
                 <div className='card-body txtCEN AIC' >
                     <label 
                         for="customRange1" 
-                        className="form-label FSize12 mb-4"
+                        className="FSize12 d-block ms-2 mb-4 TAS"
                     >
                         {this.props.value[0]}.00 AED - {this.props.value[1]}.00 AED
                     </label>
