@@ -5,7 +5,6 @@ import '../../../Assets/Scss/general.scss'
 export default class Price extends Component {
 
     constructor(props) {
-        console.info(props)
         super(props);
         this.state={
 

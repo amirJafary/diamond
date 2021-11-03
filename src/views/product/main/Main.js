@@ -13,7 +13,6 @@ export default class Main extends Component {
             currentPage:1,
             selectedId:null
         }
-        console.info(this.state)
     }
 
     getStateSortById=(sortById)=>{

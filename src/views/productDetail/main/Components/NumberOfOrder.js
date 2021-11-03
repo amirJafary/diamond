@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Dimension extends Component {
+export default class NumberOfOrder extends Component {
     render() {
         return (
             <div>

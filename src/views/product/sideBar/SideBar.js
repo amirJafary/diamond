@@ -76,7 +76,6 @@ export default class SideBar extends Component {
     }
 
     getStateValue=(value)=>{
-        console.info('this is value of range :',value)
         this.setState({
             value:value
         },()=>this.StatesOFSideBar())

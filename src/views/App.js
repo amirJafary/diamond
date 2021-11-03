@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductDetail from "./productDetail/ProductDetail";
 import Products from "./product/Products";
-import {getProductInfo} from '../Services/GetProductInfo'
+
+import {getPrintingFeature} from '../Services/GetPrintingFeature'
+import {GetBasicPriceCustomizeDemission} from '../Services/GetBasicPriceCustomizeDemission'
+
 
 export default class App extends Component {
   constructor(props) {
@@ -11,19 +14,26 @@ export default class App extends Component {
   }
 
   componentDidMount(){
-    getProductInfo(this.getProductInfoCallback)
+    getPrintingFeature(this.getPrintingFeatureCallback);
+    GetBasicPriceCustomizeDemission(this.GetBasicPriceCustomizeDemissionCallback)
   }
 
-  getProductInfoCallback=(response)=>{
-    console.info('*******',response)
+ 
+
+  getPrintingFeatureCallback=(response)=>{
+    console.info('*******getPrintingFeatureCallback*******',response)
+  }
+
+  GetBasicPriceCustomizeDemissionCallback=(response)=>{
+    console.info('*******GetBasicPriceCustomizeDemissionCallback*******',response)
   }
 
   render() {
     return (
       <Router>
         <Switch>
-          <Route path="/product" component={Products} />
-          <Route path="/product/:id" component={ProductDetail} />
+          <Route path="/products/productDetails/:id" component={ProductDetail} />
+          <Route path="/products" component={Products} />
         </Switch>
       </Router>
     );

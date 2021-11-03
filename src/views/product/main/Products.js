@@ -33,8 +33,6 @@ export default class Products extends Component {
   };
 
   GetProductsListCallBack = response => {
-    console.info(response);
-    // if(prevState.productsList !== this.state.productsList)
     this.setState({
       productsList: response,
     });
