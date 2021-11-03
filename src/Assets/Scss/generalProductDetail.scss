@@ -25,6 +25,10 @@ $border-black:1px solid rgb(0, 0, 0) !important;
     border-radius: 5px;
 }
 
+.fb{
+    font-weight: bold;
+}
+
 .bg-blackBtnClass{
     background-color: $white-color;
     color: $black-color;
@@ -97,11 +101,11 @@ $border-black:1px solid rgb(0, 0, 0) !important;
     font-size: 12px !important;
 }
 
-.p-0-ProductDetail{
+.p-0{
     padding: 0 !important;
 }
 
-.m-0-ProductDetail{
+.m-0{
     margin: 0 !important;
 }
 
