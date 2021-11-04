@@ -139,6 +139,8 @@ export default class NumberOfOrder extends Component {
 
     // get value and key of circulation (click Handler Circulation) 
     
+    circulationButtonClicked =() =>{}
+    nameChanged =() =>{}
     clickHandlerCirculationButton = (id,value) => {
         console.info('this is id of circulation = ',id,'this is value of circulation = ',value)
         this.setState({
@@ -159,19 +161,16 @@ export default class NumberOfOrder extends Component {
                         <span className="parentInput-textFiled-ProductDetail">
                             <button
                                 className="BTN-ProductDetail me-2"
-                                onClick={() => this.minusQuantity(this.state.series)}
-                            >
+                                onClick={() => this.minusQuantity(this.state.series)}>
                                 -
                             </button>
                             <Input
                                 className="input-textFiled-ProductDetail"
                                 value={this.state.quantityValue}
-                                inputstate={ariaLabel}
-                            />
+                                inputstate={ariaLabel}/>
                             <button
                                 className="BTN-ProductDetail ms-2"
-                                onClick={() => this.plusQuantity(this.state.series)}
-                            >
+                                onClick={() => this.plusQuantity(this.state.series)}>
                                 +
                             </button>
                         </span>
@@ -181,13 +180,7 @@ export default class NumberOfOrder extends Component {
                         <span>
                             {this.props.printCirculations?.length === 1 ? (
                                 <span
-                                style={{
-                                    width: "80 px",
-                                    background: "#eee",
-                                    borderRadius: "5px",
-                                }}
-                                className="ms-2 me-2 p-3"
-                                >
+                                className="ms-2 me-2 p-3">
                                 <span> Circulation </span>
 
                                 <span className="bold-ProductDetail">
@@ -203,8 +196,7 @@ export default class NumberOfOrder extends Component {
                                     key={item.key}
                                     className={`bg-blackBtnClass px-4 py-2 ${
                                         item.key === this.state.circulationKey && "activeBTN"
-                                    }`}
-                                    >
+                                    }`}>
                                     {item.value}
                                     </button>
                                 ))}
@@ -224,8 +216,7 @@ export default class NumberOfOrder extends Component {
                             <Input
                                 className="input-textFiled-ProductDetail"
                                 value={this.state.series}
-                                inputstate={ariaLabel}
-                            />
+                                inputstate={ariaLabel}/>
                             <button className="BTN-ProductDetail ms-2" onClick={this.plusSeries}>
                                 +
                             </button>

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductDetail from "./productDetail/ProductDetail";
 import Products from "./product/Products";
-
-import {getPrintingFeature} from '../Services/GetPrintingFeature'
 import {GetBasicPriceCustomizeDemission} from '../Services/GetBasicPriceCustomizeDemission'
 
 
@@ -14,14 +12,7 @@ export default class App extends Component {
   }
 
   componentDidMount(){
-    getPrintingFeature(this.getPrintingFeatureCallback);
     GetBasicPriceCustomizeDemission(this.GetBasicPriceCustomizeDemissionCallback)
-  }
-
- 
-
-  getPrintingFeatureCallback=(response)=>{
-    console.info('*******getPrintingFeatureCallback*******',response)
   }
 
   GetBasicPriceCustomizeDemissionCallback=(response)=>{

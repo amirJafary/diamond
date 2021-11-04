@@ -69,10 +69,16 @@ $border-black:1px solid rgb(0, 0, 0) !important;
 .parentInput-textFiled-ProductDetail{
     align-items: center;
     border: $border;
-    padding: 10px 5px;
-    border-radius: 3px;
+    padding: 7px 5px;
+    border-radius: 5px;
     margin: 0 !important;
     display: inline-flex;
+}
+
+.Circulation{
+    width: "80 px" !important;
+    background: "#eee" !important;
+    border-radius: "5px" !important;
 }
 
 .AIC{

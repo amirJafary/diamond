@@ -28,7 +28,6 @@ export default class ProductSpecification extends Component {
     };
 
     render() {
-        console.info(this.state)
         let text='In order to print the most economical option, based on the circulation and series, please enter your required quantity.'
         return (
             <div>

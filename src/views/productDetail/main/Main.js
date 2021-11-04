@@ -14,6 +14,7 @@ export default class Main extends Component {
             quantityValue:1000,
             series:1,
             idOfCirculation:null,
+            printedSidesKey:null,
         }
     }
 
@@ -30,6 +31,12 @@ export default class Main extends Component {
             idOfCirculation:id
         })
     }
+
+    getKeyOfPrintedSides=(printedSidesKey)=>{
+        this.setState({
+            printedSidesKey:printedSidesKey
+        })
+    }
     
     render() {
         return (
@@ -40,7 +47,8 @@ export default class Main extends Component {
                     idOfCirculation={(id)=>this.idOfCirculation(id)}
                 />
                 <PrintFeature
-                
+                    selectedId={this.state.selectedId}
+                    getKeyOfPrintedSides={printedSidesKey =>this.getKeyOfPrintedSides(printedSidesKey)}
                 />
                 <Dimension
                 

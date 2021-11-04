@@ -17,8 +17,7 @@ export default class ProductDetail extends Component {
       <div className="d-flex bd-ProductDetail m-5 p-4">
         <SideBar/>
         <Main
-          selectedId={this.state.selectedId}
-        />
+          selectedId={this.state.selectedId} />
       </div>
     )
   }
