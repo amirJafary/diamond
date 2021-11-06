@@ -11,14 +11,6 @@ export default class App extends Component {
     this.state = {};
   }
 
-  componentDidMount(){
-    GetBasicPriceCustomizeDemission(this.GetBasicPriceCustomizeDemissionCallback)
-  }
-
-  GetBasicPriceCustomizeDemissionCallback=(response)=>{
-    console.info('*******GetBasicPriceCustomizeDemissionCallback*******',response)
-  }
-
   render() {
     return (
       <Router>

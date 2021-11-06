@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import Input from "@mui/material/Input";
-import "./css/general.css";
+import "../Assets/Scss/generalProductDetail.scss";
 import { InputAdornment } from "@mui/material";
-import axios from "axios";
+import { GetBasicPriceCustomizeDemission } from "../Services/GetBasicPriceCustomizeDemission";
 
 class CustomDimension extends Component {
   constructor(props) {
@@ -15,13 +15,14 @@ class CustomDimension extends Component {
       priceOfSeries: 35,
       lat: 1,
       series: 1,
-      getDimension: [],
-      minHeight: this.props.minHeight,
-      minWidth: this.props.minWidth,
-      selectedId: null,
-      turnaroundsKey: null,
-      printedSidesKey: null,
+      customDimensionInfo: [],
+      minHeight: this.props.height,
+      minWidth: this.props.width,
+      selectedId: this.props.selectedId,
+      turnaroundsKey: 1,
+      printedSidesKey: 2,
     };
+    console.info(this.state);
   }
 
   handleClick = event => {
@@ -32,30 +33,42 @@ class CustomDimension extends Component {
     this.setState({ anchorEl: null });
   };
 
-  minus = () => {
+  minusWidth = () => {
     if (this.state.minWidth > 1)
-      this.setState({
-        minWidth: this.state.minWidth - 1,
-      },()=>this.getDimensionFromGetBasicPriceOfMenuButton());
+      this.setState(
+        {
+          minWidth: this.state.minWidth - 1,
+        },
+        () => this.GetBasicPriceCustomizeDemissionCallback()
+      );
   };
 
-  plus = () => {
-    this.setState({
-      minWidth: this.state.minWidth + 1,
-    },()=>this.getDimensionFromGetBasicPriceOfMenuButton());
+  plusWidth = () => {
+    this.setState(
+      {
+        minWidth: this.state.minWidth + 1,
+      },
+      () => this.GetBasicPriceCustomizeDemissionCallback()
+    );
   };
 
-  minus1 = () => {
+  minusHeight = () => {
     if (this.state.minHeight > 1)
-      this.setState({
-        minHeight: this.state.minHeight - 1,
-      },()=>this.getDimensionFromGetBasicPriceOfMenuButton());
+      this.setState(
+        {
+          minHeight: this.state.minHeight - 1,
+        },
+        () => this.GetBasicPriceCustomizeDemissionCallback()
+      );
   };
 
-  plus1 = () => {
-    this.setState({
-      minHeight: this.state.minHeight + 1,
-    },()=>this.getDimensionFromGetBasicPriceOfMenuButton());
+  plusHeight = () => {
+    this.setState(
+      {
+        minHeight: this.state.minHeight + 1,
+      },
+      () => this.GetBasicPriceCustomizeDemissionCallback()
+    );
   };
 
   setStateCurrentStateWithProps = () => {
@@ -63,126 +76,78 @@ class CustomDimension extends Component {
       {
         minHeight: this.props.minHeight,
         minWidth: this.props.minWidth,
-        selectedId: this.props.selectedId,
-        turnaroundsKey: this.props.turnaroundsKey,
-        printedSidesKey: this.props.printedSidesKey,
       },
-      () => this.getDimensionFromGetBasicPriceOfMenuButton()
+      () => this.GetBasicPriceCustomizeDemissionCallback()
     );
   };
 
-  // componentDidMount(){
-  //   this.setStateCurrentStateWithProps()
-  // }
-
-  componentDidUpdate() {
-    if (
-      this.props.selectedId !== this.state.selectedId ||
-      this.props.turnaroundsKey !== this.state.turnaroundsKey ||
-      this.props.printedSidesKey !== this.state.printedSidesKey 
-      // this.props.minHeight !== this.state.minHeight ||
-      // this.props.minWidth !== this.state.minWidth
-    )
-      this.setStateCurrentStateWithProps();
-  }
-
-  changeHandlerHeight = e => {
+  HeightChanged = e => {
     this.setState(
       {
         minHeight: Math.floor(e.target.value),
       },
-      () => this.getDimensionFromGetBasicPriceOfMenuButton()
+      () => this.GetBasicPriceCustomizeDemissionCallback()
     );
   };
 
-  changeHandlerWidth = e => {
+  WidthChanged = e => {
     this.setState(
       {
         minWidth: Math.floor(e.target.value),
       },
-      () => this.getDimensionFromGetBasicPriceOfMenuButton()
+      () => this.GetBasicPriceCustomizeDemissionCallback()
     );
   };
 
-  getDimensionFromGetBasicPriceOfMenuButton = () => {
-    let url =
-      "https://api.diamond-press.com/api/en/Order/SharedSheetOrder/GetBasicPrice?";
-    let data = {
-      productId: this.state.selectedId,
-      series: 1,
-      turnaround: this.state.turnaroundsKey,
-      twoSidePrintingType: this.state.printedSidesKey,
-      width: this.state.minWidth,
-      height: this.state.minHeight,
-    };
-    axios
-      .post(url, data, {
-        headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYxNDkiLCJyb2xlIjoiVXNlciIsIm5iZiI6MTYzNDM5NTY1MCwiZXhwIjoxNjM2OTg3NjUwLCJpYXQiOjE2MzQzOTU2NTB9.UB-f-snek_aBdMj8FS54rDnEIgMiOwZYyT0bjxy4_zk`,
-        },
-      })
-      .then(res => {
-        console.info(
-          "**** response get Dimension From Get Basic Price => ",
-          res.data.messageItems[0].data
-        );
-        let basePrice=res.data.messageItems[0]?.data[0]?.basePrice
-        this.setState(
-          {
-            getDimension: res.data.messageItems[0].data,
-            priceOfSeries:basePrice
-          },
-          () =>
-            console.info("console aaaaaaaaaaa ", basePrice)
-          // },()=>
-          // console.info('console aaaaaaaaaaa ',this.state.getDimension)
-        );
-      });
+  componentDidMount() {
+    this.setStateCurrentStateWithProps();
+    GetBasicPriceCustomizeDemission(
+      this.GetBasicPriceCustomizeDemissionCallback,
+      this.state.selectedId,
+      this.state.turnaroundsKey,
+      this.state.printedSidesKey,
+      this.state.minWidth,
+      this.state.minHeight
+    );
+  }
+
+  componentDidUpdate(prevState) {
+    if (
+      prevState.minWidth  !== this.state.minWidth ||
+      prevState.minHeight !== this.state.minHeight ||
+      prevState.selectedId !== this.state.selectedId ||
+      // prevState.turnaroundsKey !== this.state.turnaroundsKey ||
+      prevState.printedSidesKey !== this.state.printedSidesKey 
+    )
+    GetBasicPriceCustomizeDemission(
+      this.GetBasicPriceCustomizeDemissionCallback,
+      this.state.selectedId,
+      this.state.turnaroundsKey,
+      this.state.printedSidesKey,
+      this.state.minWidth,
+      this.state.minHeight
+    )
+  }
+
+  GetBasicPriceCustomizeDemissionCallback = response => {
+    console.info("****************************************", response);
+    // let price = response?.map(item=>item?.basePrice)[0]
+    this.setState(
+      {
+        customDimensionInfo: response,
+        // priceOfSeries:price
+      },
+      () => console.info()
+    );
   };
-
-  getDimensionFromGetBasicPrice = () => {
-    let url =
-      "https://api.diamond-press.com/api/en/Order/SharedSheetOrder/GetBasicPrice?";
-    let data = {
-      productId: this.state.selectedId,
-      series: this.state.series,
-      turnaround: this.state.turnaroundsKey,
-      twoSidePrintingType: this.state.printedSidesKey,
-    };
-    axios
-      .post(url, data, {
-        headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYxNDkiLCJyb2xlIjoiVXNlciIsIm5iZiI6MTYzNDM5NTY1MCwiZXhwIjoxNjM2OTg3NjUwLCJpYXQiOjE2MzQzOTU2NTB9.UB-f-snek_aBdMj8FS54rDnEIgMiOwZYyT0bjxy4_zk`,
-        },
-      })
-      .then(res => {
-        // console.info('**** response get Dimension From Get Basic Price => ',res.data.messageItems[0].data)
-        if (!res.data.hasError) {
-          this.setState(
-            { getInformationOfProducts: res.data?.messageItems[0]?.data }
-            // ,()=>console.info('**************this is log from res (get basic price) => **** ',res.data.messageItems[0].data)
-          );
-        } else {
-          alert("this product not found please select other products");
-        }
-      });
-  };
-
-  // componentDidMount(){
-
-  // }
-
-  // componentDidUpdate(prevState){
-  //   if(
-  //     prevState.lat !== this.state.lat ||
-  //     prevState.priceOfSeries !== this.state.priceOfSeries
-  //   )
-  //   this.getDimensionFromGetBasicPriceOfMenuButton()
-  // }
 
   render() {
     const open = Boolean(this.state.anchorEl);
     const ariaLabel = { "aria-label": "description" };
+    console.info(
+      "***this.state.customDimensionInfo =",
+      this.state.customDimensionInfo
+    );
     return (
       <div>
         <Button
@@ -215,20 +180,26 @@ class CustomDimension extends Component {
           <div className="d-flex">
             <div className="col-6">
               <span className="parentInput-textFiled-ProductDetail me-2">
-                <button className="BTN-ProductDetail me-2" onClick={this.minus}>
+                <button
+                  className="BTN-ProductDetail me-2"
+                  onClick={this.minusWidth}
+                >
                   -
                 </button>
                 <Input
                   className="input-textFiled-ProductDetail"
                   value={this.state.minWidth}
                   inputProps={{ ariaLabel }}
-                  onChange={e => this.changeHandlerWidth(e)}
+                  onChange={e => this.WidthChanged(e)}
                   type="number"
                   endAdornment={
                     <InputAdornment position="end">mm</InputAdornment>
                   }
                 />
-                <button className="BTN-ProductDetail ms-2" onClick={this.plus}>
+                <button
+                  className="BTN-ProductDetail ms-2"
+                  onClick={this.plusWidth}
+                >
                   +
                 </button>
               </span>
@@ -237,7 +208,7 @@ class CustomDimension extends Component {
               <span className="parentInput-textFiled-ProductDetail me-2">
                 <button
                   className="BTN-ProductDetail me-2"
-                  onClick={this.minus1}
+                  onClick={this.minusHeight}
                 >
                   -
                 </button>
@@ -245,13 +216,16 @@ class CustomDimension extends Component {
                   className="input-textFiled-ProductDetail"
                   value={this.state.minHeight}
                   inputProps={ariaLabel}
-                  onChange={e => this.changeHandlerHeight(e)}
+                  onChange={e => this.HeightChanged(e)}
                   type="number"
                   endAdornment={
                     <InputAdornment position="end">mm</InputAdornment>
                   }
                 />
-                <button className="BTN-ProductDetail ms-2" onClick={this.plus1}>
+                <button
+                  className="BTN-ProductDetail ms-2"
+                  onClick={this.plusHeight}
+                >
                   +
                 </button>
               </span>
@@ -265,7 +239,7 @@ class CustomDimension extends Component {
                   Dimension (mm)
                 </label>
                 <br />
-                {this.props.getInformationOfProducts?.map(item => {
+                {this.props.availableDimensions?.map(item => {
                   return (
                     <div className="d-block w-100">
                       {item.name && (
@@ -283,9 +257,9 @@ class CustomDimension extends Component {
                   Price
                 </label>
                 <br />
-                {this.props.getInformationOfProducts?.map(item => (
+                {this.state.customDimensionInfo?.map(item => (
                   <span className="px-3 d-block py-1 border-dimension-ProductDetail TAC-ProductDetail bdr-ProductDetail">
-                    {this.state.priceOfSeries}.00 AED
+                    {item.basePrice}.00 AED
                     <br />
                   </span>
                 ))}
@@ -298,4 +272,4 @@ class CustomDimension extends Component {
   }
 }
 
-export default MenuButton;
+export default CustomDimension;

@@ -12,10 +12,7 @@ export default class NumberOfOrder extends Component {
             series: 1,
             circulationKey: this.props.selectedId,
             firstValue:1000,
-            printedSidesKey: 1,
-            printedSidesValue:null
         };
-        console.info(this.props.selectedId)
     }
 
     // set first value of Quantity

@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import ProductSpecification from './Components/ProductSpecification'
 import PrintFeature from './Components/PrintFeature'
 import Dimension from './Components/Dimension'
-import CustomDimension from './Components/CustomDimension'
+
 import '../../../Assets/Scss/generalProductDetail.scss'
+
 
 export default class Main extends Component {
 
@@ -14,7 +15,7 @@ export default class Main extends Component {
             quantityValue:1000,
             series:1,
             idOfCirculation:null,
-            printedSidesKey:null,
+            printedSidesKey:2,
         }
     }
 
@@ -28,7 +29,7 @@ export default class Main extends Component {
     idOfCirculation=(id)=>{
         console.info('id Of Circulation',id)
         this.setState({
-            idOfCirculation:id
+            selectedId:id
         })
     }
 
@@ -51,11 +52,14 @@ export default class Main extends Component {
                     getKeyOfPrintedSides={printedSidesKey =>this.getKeyOfPrintedSides(printedSidesKey)}
                 />
                 <Dimension
-                
+                    key={this.state.selectedId}
+                    selectedId={this.state.selectedId}
+                    printedSidesKey={this.state.printedSidesKey}
+                    series={this.state.series}
                 />
-                <CustomDimension
+                {/* <CustomDimension
                 
-                />
+                /> */}
             </div>
         )
     }

@@ -9,7 +9,7 @@ export default class PrintFeature extends Component {
         this.state={
             printedSides:[],
             turnarounds:[],
-            printedSidesKey: [],
+            printedSidesKey: 2,
             printedSidesValue:'',
         }
     }
@@ -37,8 +37,8 @@ export default class PrintFeature extends Component {
     render() {
         // console.info(this.state)
         return (
-            <div>
-                <div className="mt-3 mt-5 TAC-ProductDetail d-flex">
+            <div >
+                <div className="mb-5 mt-5 TAC-ProductDetail d-flex">
                     <span
                         className="ms-2 Circulation fwNORMAL fs15-ProductDetail me-2 p-3"
                     >
@@ -50,8 +50,7 @@ export default class PrintFeature extends Component {
                     {this.state.printedSides?.length === 1 ? (
                         <div>
                             <div
-                                style={{ width: "80 px", background: "#eee", borderRadius: "5px" }}
-                                className="ms-2 fwnoraml fs15-ProductDetail me-2 p-3">
+                                className="ms-2 Circulation fwNORMAL fs15-ProductDetail me-2 p-3">
                                 <div> Printed Sides </div>
                                 
                                 <div className="bold-ProductDetail">
