@@ -1,0 +1,127 @@
+.MuiIconButton-root{
+    padding: 5px !important;
+}
+
+.css-1kpdewa-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-endAdornment{
+    right: 0 !important;
+    
+}
+
+.css-1kpdewa-MuiAutocomplete-root .MuiOutlinedInput-root{
+    padding: 0 !important;
+}
+
+.signIn-background{
+    width: 50vw ;
+    height: 350px;
+    background-color: black;
+    color: white;
+    text-align: start;
+}
+
+.parent-sign{
+    background-color: white;
+    color: black;
+    width: 350px;
+    height: 450px;
+    box-shadow: 0 6px 10px  #ccc;
+    margin-left: 50px;
+    position: relative;
+    top: -50px;
+
+}
+
+.sign{
+    text-align: center;
+    background-color: rgb(238, 244, 245);
+    width: 100vw;
+    height: 100vh;
+    padding: 130px 300px;
+}
+
+.img-logo-sign{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.forget-password{
+    font-style: normal !important;
+    text-decoration: none;
+}
+
+.fwb{
+    font-weight: bold;
+}
+
+.btn-sign{
+    outline: none;
+    background-color: rgb(180, 19, 19) ;
+    border: 1px solid  black;
+    padding: 10px 20px !important;
+    color: rgb(255, 255, 255) !important;
+    border-radius: 5px !important;
+    overflow: hidden !important;
+    margin-top: 120px;
+    font-size: 16px !important;
+    margin-left: 50px;
+}
+
+.mt-6{
+    margin-top: 50px;
+}
+
+.mt-7{
+    margin-top: 60px;
+}
+
+.mt-8{
+    margin-top: 70px;
+}
+
+.btn-signIn{
+    outline: none;
+    background-color: rgb(180, 19, 19) ;
+    border: none;
+    padding: 10px 20px !important;
+    color: rgb(255, 255, 255) !important;
+    border-radius: 5px !important;
+    overflow: hidden !important;
+    font-size: 16px !important;
+    box-shadow: 0 2px 4px #ccc;
+}
+
+.TAC{
+    text-align: center !important;
+}
+
+.label-password{
+    color: rgba(0,0,0,.6);
+    font-size: 13px;
+}
+
+.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input{
+    padding-right: 0 !important;
+    min-width: 45px !important;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+    width: auto !important;
+}
+
+.MuiPaper-root{
+    padding: 5px !important;
+}
+
+.align-item-center{
+    justify-content:space-between;
+    align-items: center;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.makeStyles-margin-2{
+    margin: 0 !important;
+}

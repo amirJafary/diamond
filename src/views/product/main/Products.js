@@ -85,7 +85,7 @@ export default class Products extends Component {
             className="card OV-HI col-4 mx-10 cardParent2"
           >
             <div className="POS-REL">
-              <a href={"/product/" + product.selectedId}>
+              <a href={"/products/productDetails/" + product.selectedId}>
                 <img src={photo} className="ImgProducts cardImg" alt="card" />
               </a>
               <p className="POS-ABS">{product.name}</p>
