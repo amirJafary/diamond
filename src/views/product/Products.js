@@ -28,11 +28,6 @@ class Products extends Component {
     categoriesSelectedID,
     categoriesList
   ) => {
-    console.info(
-      "***categoriesSelected=,",
-      categoriesSelected,
-      categoriesSelectedID
-    );
     this.setState({
       categoriesSelected: categoriesSelected,
       inputSearch: inputSearch,

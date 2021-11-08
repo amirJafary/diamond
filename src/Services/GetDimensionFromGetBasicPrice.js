@@ -11,10 +11,14 @@ const GetDimensionFromGetBasicPrice = (callback,selectedId,printedSidesKey,serie
         turnaround: 1,
         twoSidePrintingType: printedSidesKey,
     };
+
+    const token = localStorage.getItem('token');
+    console.info(token)
+
     axios
         .post(url, data, {
             headers: {
-                Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYxNDkiLCJyb2xlIjoiVXNlciIsIm5iZiI6MTYzNDM5NTY1MCwiZXhwIjoxNjM2OTg3NjUwLCJpYXQiOjE2MzQzOTU2NTB9.UB-f-snek_aBdMj8FS54rDnEIgMiOwZYyT0bjxy4_zk`,
+                Authorization: `Bearer ${token}`,
             },
         })
         .then(res => { callback(res.data.messageItems[0]?.data) });

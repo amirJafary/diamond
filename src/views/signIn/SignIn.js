@@ -78,12 +78,13 @@ export default class SignIn extends Component {
             localStorage.setItem("token", res.messageItems[0]?.data?.token);
             window.location.href = "http://localhost:3000/products"
         }else{
-            alert("eshtebah dari mizani dadach")
+            alert("your mobile number or password is wrong")
         }
     };
 
+    
+
     render() {
-        console.log(this.state);
         return (
         <div className="sign">
             {this.state.signIn ? (
@@ -171,3 +172,5 @@ export default class SignIn extends Component {
         );
     }
 }
+
+

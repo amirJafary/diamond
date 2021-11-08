@@ -47,7 +47,8 @@ export default class SelectVariants extends React.Component {
                         label="Age"
                     >
                         {this.state.countries.map(country=>
-                            <MenuItem onClick={()=>this.ItemClicked(country.code)} value={country.code} name={country.name}><img className='mb-1' alt='country' src={country.flag}></img></MenuItem>
+                            <MenuItem onClick={()=>this.ItemClicked(country.code)} value={country.code} name={country.name}><img className='mb-1' alt='country' src={country.flag}/></MenuItem>
+                            
                         )}
                     </Select>
                 </FormControl>

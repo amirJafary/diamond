@@ -6,9 +6,11 @@ const getConfirmToSignIn = (callback, mobileNumber , password) => {
         mobile: mobileNumber,
         password: password,
     };
+    const token = localStorage.getItem('token');
+
     let header = {
         headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEwOCIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjM2MjE4MDQyLCJleHAiOjE2Mzg4MTAwNDIsImlhdCI6MTYzNjIxODA0Mn0.4ZfNIqflP5__llHTv2diaepaZvCUd8mc5QtPOodfsOA`,
+            Authorization: `Bearer ${token}`,
         },
     };
 

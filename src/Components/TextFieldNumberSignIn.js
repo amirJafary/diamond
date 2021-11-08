@@ -7,7 +7,6 @@ import TextField from "@mui/material/TextField";
 export default class InputAdornments extends React.Component {
   constructor(props) {
     super(props);
-    console.info(this.props);
     this.state = {
       mobileNumber: "",
       token: "",
@@ -25,7 +24,6 @@ export default class InputAdornments extends React.Component {
   };
 
   render() {
-    console.info(this.props);
     return (
       <Box>
         <div className="">
