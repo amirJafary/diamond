@@ -113,20 +113,20 @@ class CustomDimension extends Component {
 
   componentDidUpdate(prevState) {
     if (
-      prevState.minWidth  !== this.state.minWidth ||
+      prevState.minWidth !== this.state.minWidth ||
       prevState.minHeight !== this.state.minHeight ||
       prevState.selectedId !== this.state.selectedId ||
       // prevState.turnaroundsKey !== this.state.turnaroundsKey ||
-      prevState.printedSidesKey !== this.state.printedSidesKey 
+      prevState.printedSidesKey !== this.state.printedSidesKey
     )
-    GetBasicPriceCustomizeDemission(
-      this.GetBasicPriceCustomizeDemissionCallback,
-      this.state.selectedId,
-      this.state.turnaroundsKey,
-      this.state.printedSidesKey,
-      this.state.minWidth,
-      this.state.minHeight
-    )
+      GetBasicPriceCustomizeDemission(
+        this.GetBasicPriceCustomizeDemissionCallback,
+        this.state.selectedId,
+        this.state.turnaroundsKey,
+        this.state.printedSidesKey,
+        this.state.minWidth,
+        this.state.minHeight
+      );
   }
 
   GetBasicPriceCustomizeDemissionCallback = response => {
